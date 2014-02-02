@@ -1,0 +1,15 @@
+<h1>Check these out...</h1>
+<ul>
+<%@request["items"].each do |x|%>
+<%=startTime = x["start"]["dateTime"] %>
+<%=check = DateTime.iso8601(startTime) %>
+<%#binding.pry%>
+<%= DateTime.now #check %>  
+<h3><%= x["summary"] %></h3>
+<li><%= x["location"]%></li>
+<li><%= DateTime.now%></li>
+<li><%= x["start"]["dateTime"]%></li>
+<li><%= x["description"]%></li>
+<%end%>
+<%end%>
+</ul>
