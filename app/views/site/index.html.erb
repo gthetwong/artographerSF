@@ -1,15 +1,36 @@
 <h1>Check these out...</h1>
 <ul>
-<%@request["items"].each do |x|%>
-<%=startTime = x["start"]["dateTime"] %>
-<%=check = DateTime.iso8601(startTime) %>
-<%#binding.pry%>
-<%= DateTime.now #check %>  
+        <% if signed_in? %>
+          <li><%= link_to "My profile", current_user %></li>
+          <li>
+            <%= link_to "Sign out", signout_path, method: "delete" %>
+          </li>
+        <% else %>
+          <li><%= link_to "Sign up", signup_path %></li>
+          <li><%= link_to "Sign in", signin_path %></li>
+        <% end %>
+</ul>
+
+<ul>
+<%for x in @request[0...5] do %>
+<% start = x["start"]["dateTime"] %>
+<% event = DateTime.parse(start)%>
+<% event_date = event.to_date %>
+
+
+<%#= DateTime.now #check %>  
 <h3><%= x["summary"] %></h3>
 <li><%= x["location"]%></li>
-<li><%= DateTime.now%></li>
+<!-- <li><%#= html_doc = Nokogiri::HTML check%></li> -->
 <li><%= x["start"]["dateTime"]%></li>
-<li><%= x["description"]%></li>
-<%end%>
+<%= doc = Nokogiri::HTML(x["description"]) %>
+<br><br>
+<div> <%#= doc.css("a") %> </div>
+<div> <%#= doc.css("img") %> </div>
+<div> <%#= doc.css("p") %></div>
+
+
+
+<%#end%>
 <%end%>
 </ul>
