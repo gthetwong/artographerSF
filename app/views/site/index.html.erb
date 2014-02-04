@@ -1,5 +1,5 @@
-<h1>Check these out...</h1>
-<ul>
+<h1>ArtographerSF</h1>
+<ul class="signin">
         <% if signed_in? %>
           <li><%= link_to "My profile", current_user %></li>
           <li>
@@ -11,8 +11,10 @@
         <% end %>
 </ul>
 
+
+<div class="event_list">
 <ul>
-<%for x in @request[0...5] do %>
+<%for x in @request[0...8] do %>
 <% start = x["start"]["dateTime"] %>
 <% event = DateTime.parse(start)%>
 <% event_date = event.to_date %>
@@ -34,3 +36,4 @@
 <%#end%>
 <%end%>
 </ul>
+</div>

@@ -22,9 +22,21 @@ class SiteController < ApplicationController
 		 end
 		 # puts "@@@@@@@@@@#{@request} @@@@@@@@@@@@"
 		 @request.sort_by! {|x| x["start"]["dateTime"]}
+		 @request.each do |events|
+			 event = Event.all.where(:name => events["summary"])
 
+			 if event!=nil
+			 	new_event = Event.new
+			 	new_event.name = events["summary"]
+			 	new_event.location = events["location"]
+			 	new_event.time = events["start"]["dateTime"]
+			 	new_event.closing = events["end"]["dateTime"]
+			 	new_event.description = events["description"]
+			 	new_event.save			
+			end
+		end
 		# Add new models,
 		# add crossover with users
 
-	end
+		end
 end

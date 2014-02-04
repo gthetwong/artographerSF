@@ -1,8 +1,9 @@
 class EventsController < ApplicationController
 
-	
-	
-	def new
+
+
+	def all
+		@events = Event.all
 	end
 
 end
