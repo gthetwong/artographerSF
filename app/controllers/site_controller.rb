@@ -1,51 +1,7 @@
-require 'google/api_client'
-require 'typhoeus'
-require 'date'
-require 'nokogiri'
 class SiteController < ApplicationController
 
-
 	def index
-		request = Typhoeus::Request.get("https://www.googleapis.com/calendar/v3/calendars/orougreqvdjcj9iagjhj0qllt6bqj87f%40import.calendar.google.com/events?key=AIzaSyBqZaycQIS6AsKqeI7x3TS_tfu-bvZw050", :params => {:key => 'artographersf'})
-		parsed = JSON.parse(request.body)
-		@request = []
-
-		parsed["items"].each do |events|
-			if events["end"]["dateTime"] != nil
-			end_date = events["end"]["dateTime"]
-			event = end_date.to_date
-		 	
-		 		if event > Date.today
-		 			@request << events
-		 		end
-		 	end
-		 end
-		 
-		 @request.sort_by! {|x| x["start"]["dateTime"]}
-		 @request.each do |events|
-
-			unless Event.where(name: events["summary"]).exists?
-
-			 	new_event = Event.new
-			 	new_event.name = events["summary"]
-			 	new_event.location = events["location"]
-			 	new_event.time = events["start"]["dateTime"]
-			 	new_event.closing = events["end"]["dateTime"]
-			 	new_event.description = events["description"]
-
-			 	doc = Nokogiri::HTML(events["description"]) 
-					 image_tag = doc.at_css('img') 
-					 unless image_tag.nil?
-					 	img_src = image_tag.attribute("src")
-					 end
-					 
-				 new_event.image = img_src.to_s
-
-			 	new_event.save			
-			end
+		Event.load_info
 		end
-		# Add new models,
-		# add crossover with users
-
-		end
+		
 end

@@ -1,4 +1,4 @@
-<h1>ArtographerSF</h1>
+<h1 class="head">ArtographerSF</h1>
 <ul class="signin">
         <% if signed_in? %>
           <li><%= link_to "My profile", current_user %></li>
@@ -14,29 +14,17 @@
 
 <div class="container" >
 
-	<%for x in @request[0...15] do %>
-	<% start = x["start"]["dateTime"]%>
-	<% event = DateTime.parse(start)%>
-	<% event_date = event.to_date %>
+	<%for x in Event.all[0...10] do %>
 	<div class="event_container"> 
-		<div class="event_info">  
-			<h3><%= x["summary"] %></h3>
-			<p><%= x["location"]%></p>
-			<p><%= x["start"]["dateTime"]%></p>
+		<img class="poster" src="<%=x.image%>" />
+		<div class="event_info"> 
+			<h3><%= x.name %></h3>
+			<p><%= x.location %></p>
+			<p><%= x.time %></p> 
 		</div><!--end_event_info-->
-
-		<% doc = Nokogiri::HTML(x["description"]) %>
-		<% image = doc.at_css('img') %><br>
-			<% unless image.nil? %>
-				<img class="poster" src="<%= image.attribute("src") %>">
-			<% end%>
-		 
-			<%p = doc.search("p") %>
-			<div class="description">
-				<% p.each do |node|%>
-				<p><% node.text %></p>
-				<% end%>
-			</div><!--end_description-->
+		<div class="description">
+			<%= x.description.html_safe%>
+		</div><!--end_description-->
 	</div><!--end_event_container-->
 	<%end%>
 
