@@ -12,14 +12,14 @@
 </ul>
 
 
-<div class="container" >
 
+<div class="container nano">
 	<%for x in Event.all[0...10] do %>
-	<div class="event_container"> 
+	<div class="event_container content"> 
 		<img class="poster" src="<%=x.image%>" />
 		<div class="event_info"> 
-			<h3><%= x.name %></h3>
-			<p><%= x.location %></p>
+			<h4><%= x.name %></h4>
+			<p><%= x.location.split("@").last %></p>
 			<p><%= x.time %></p> 
 		</div><!--end_event_info-->
 		<div class="description">
@@ -28,4 +28,4 @@
 	</div><!--end_event_container-->
 	<%end%>
 
-</div><!--end_container--->
+</div><!--end_container-->

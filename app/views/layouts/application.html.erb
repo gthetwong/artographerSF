@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
   <title>Artographer</title>
-  <link href="/assets/normalize.css" rel="stylesheet" type="text/css">
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSwOFjXD4yZB8Hyjh0crY3aeBX9IcTm64&sensor=false"></script>
+  
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Alef' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+  
+
 
 </head>
 <body>
 
 <%= yield %>
-
+<div id="map-canvas" class="mapper"></div>
 </body>
 </html>

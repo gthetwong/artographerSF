@@ -4,11 +4,11 @@ class Event < ActiveRecord::Base
 
 
 	def self.load_info
-		t_request = Typhoeus::Request.get("https://www.googleapis.com/calendar/v3/calendars/orougreqvdjcj9iagjhj0qllt6bqj87f%40import.calendar.google.com/events?key=AIzaSyBqZaycQIS6AsKqeI7x3TS_tfu-bvZw050", :params => {:key => 'artographersf'})
+		t_request = Typhoeus::Request.get("https://www.googleapis.com/calendar/v3/calendars/orougreqvdjcj9iagjhj0qllt6bqj87f%40import.calendar.google.com/events?key=AIzaSyBqZaycQIS6AsKqeI7x3TS_tfu-bvZw050")
+		# , :params => {:key => 'artographersf'}
 		@parsed = JSON.parse(t_request.body)
 		
 		request = []
-		
 		@parsed["items"].each do |events|
 			if events["end"]["dateTime"] != nil
 			end_date = events["end"]["dateTime"]

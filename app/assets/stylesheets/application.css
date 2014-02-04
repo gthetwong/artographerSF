@@ -1,31 +1,67 @@
 
-
 *{
 	/*border: 2px solid black;*/
 	list-style-type:none;
-	font-family: 'Alegreya Sans SC', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	font-weight:300;
+	color: #fff;
+}
+
+html, body{
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+#map-canvas {
+	height:95%;
 }
 
 .head {
 	margin-left:100px;
+	margin-top:10px;
+	margin-bottom:10px;
+	font-weight:300;
+	color:#333;
+	height:5%;
+
 }
 
 .signin {
 	display:inline-block;
-	float:right;
+	position:absolute;
+	top:0;
+	right:25px;
+	z-index: 1;
+}
+.signin li a{
+	color:#333;
+
+}
+
+.mapper{
+	
+	z-index:0;
 }
 
 .container{
 	background-color:#333;
-	width: 450px;
+	width: 400px;
 	font-size:small;
-	height:700px;
-	overflow-y:scroll;
+	height:90%;
+	overflow-y:auto;
+	z-index: 1;
+	position:absolute;
+	/*top: 85px;
+	left:0px;*/
+	opacity: 0.9;
+	margin-left:100px;
+	padding-bottom:20px;
+	/*background: linear-gradient(rgba(0,0,0,0.9),rgba(150,150,150,0.75));*/
 }
 
 .event_container{
-	height:200px;
-	margin-left:20px;
+	height:100px;
+	margin-left:10px;
 	padding:25px;
 }
 
@@ -35,8 +71,8 @@
 	float:right;
 }
 .event_info {
-	height:75px;
-	width:275px;
+	height:60px;
+	width:300px;
 }
 .event_info p {
 	margin-top:-10px;
@@ -44,8 +80,7 @@
 
 .description {
 	margin-top:15px;
-	height:60px;
+	height:0px;
 	overflow:hidden;
 }
-
 
