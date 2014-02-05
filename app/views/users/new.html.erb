@@ -1,7 +1,8 @@
-<h1>Sign up</h1>
+<h1 class="head">ArtographerSF</h1>
+<h1 class="signup">Sign up</h1>
 
 <div>
-    <div>
+    <div class="signup_form">
         <%= form_for(@user) do |f| %>
             <% unless @user.errors.count == 0   %>
             <div class="alert alert-error">
@@ -16,17 +17,17 @@
 
             <%= f.label :name %>
             <%= f.text_field :name %>
-
+            
             <%= f.label :email %>
             <%= f.text_field :email %>
-
+         
             <%= f.label :password %>
             <%= f.password_field :password %>
-
+        
             <%= f.label :password_confirmation, "Confirmation" %>
             <%= f.password_field :password_confirmation %>
-
-            <%= f.submit "Create my account" %>
+            
+            <%= f.submit "Create My Account", :class => 'signup_btn' %>
         <% end %>
     </div>
 </div>

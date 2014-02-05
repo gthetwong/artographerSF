@@ -1,15 +1,5 @@
 <h1 class="head">ArtographerSF</h1>
-<ul class="signin">
-        <% if signed_in? %>
-          <li><%= link_to "My profile", current_user %></li>
-          <li>
-            <%= link_to "Sign out", signout_path, method: "delete" %>
-          </li>
-        <% else %>
-          <li><%= link_to "Sign up", signup_path %></li>
-          <li><%= link_to "Sign in", signin_path %></li>
-        <% end %>
-</ul>
+
 
 
 

@@ -5,8 +5,11 @@
 	font-family: 'Open Sans', sans-serif;
 	font-weight:300;
 	color: #fff;
+	text-decoration: none;
 }
 
+
+/*------------MAP STYLING--------------*/
 html, body{
         height: 100%;
         margin: 0px;
@@ -20,6 +23,15 @@ html, body{
 	scrolling:none;
 }
 
+.mapper{
+	z-index:1;
+}
+
+
+/*-----------INDEX STYLING-------------*/
+
+
+				/*--header--*/
 .head {
 	position:absolute;
 	top:0px;
@@ -33,52 +45,50 @@ html, body{
 	z-index:3;
 	color: orange;
 }
-
-.head h1{
+.head a {
+	color: orange;
+}
+.head h1 {
 	z-index:3;	
 }
-
 .signin {
 	display:inline-block;
 	position:absolute;
 	top:0;
 	right:25px;
-	z-index:1;
+	z-index:3;
 }
 .signin li a{
 	color:#333;
-
 }
-.mapper{
-	z-index:1;
-}
+		/*----end_header----*/
 
+
+		/*----Event-list----*/
 .container{
 	background-color:#333;
 	width: 400px;
 	font-size:small;
-	height:88%;
+	height:86%;
 	overflow:auto;
 	z-index: 2;
 	position:absolute;
 	/*top: 85px;
 	left:0px;*/
 	opacity: 0.9;
-	/*margin-left:100px;*/
+	padding-left:15px;
 	padding-bottom:6%;
-	padding-top:6%;
+	padding-top:8%;
 	/*background: linear-gradient(rgba(0,0,0,0.9),rgba(150,150,150,0.75));*/
 }
-
 .event_container{
 	height:100px;
 	margin-left:10px;
 	margin-right:10px;
 	padding-bottom:5px;
-	padding-top:5px;
+	padding-top:0px;
 	border-bottom:1px solid #999;
 }
-
 .poster {
 	max-height:100px;
 	width:75px;
@@ -91,12 +101,61 @@ html, body{
 .event_info p {
 	margin-top:-10px;
 }
-
 .description {
 	margin-top:15px;
 	height:0px;
 	overflow:hidden;
 }
+	/*-----end_Event_list------*/
+
+
+
+
+
+/*---------------SIGN UP PAGE-----------------*/
+
+.signup{
+	color:#333;
+	margin-left:350px;
+}
+
+.signup_form{
+	margin-left: 50px;
+	margin-bottom:50px;
+}
+
+.signup_form label{
+	color:#333;
+	margin-left:50px;
+}
+
+.signup_form input{
+	color:#333;
+}
+
+.signup_btn {
+	background-color: orange;
+	border:none;
+	padding:5px;
+}
+
+
+
+/*------------SIGN IN PAGE -------------------*/
+
+.new_user {
+	color:#333;
+}
+
+
+
+
+/*-------------PROFILE PAGE--------------------*/
+
+.signedin h3{
+	color:#333;
+}
+
 
 
 
