@@ -1,6 +1,6 @@
 
 *{
-	/*border: 2px solid black;*/
+	/*border: 1px solid black;*/
 	list-style-type:none;
 	font-family: 'Open Sans', sans-serif;
 	font-weight:300;
@@ -10,20 +10,32 @@
 html, body{
         height: 100%;
         margin: 0px;
-        padding: 0px
+        padding: 0px;
+        scrolling:none;
+        overflow:hidden;
       }
 #map-canvas {
-	height:95%;
+	height:100%;
+	overflow-y:hidden;
+	scrolling:none;
 }
 
 .head {
+	position:absolute;
+	top:0px;
+	left:0px;
 	margin-left:100px;
-	margin-top:10px;
+/*	margin-top:10px;
 	margin-bottom:10px;
-	font-weight:300;
+*/	font-weight:300;
 	color:#333;
 	height:5%;
+	z-index:3;
+	color: orange;
+}
 
+.head h1{
+	z-index:3;	
 }
 
 .signin {
@@ -31,43 +43,45 @@ html, body{
 	position:absolute;
 	top:0;
 	right:25px;
-	z-index: 1;
+	z-index:1;
 }
 .signin li a{
 	color:#333;
 
 }
-
 .mapper{
-	
-	z-index:0;
+	z-index:1;
 }
 
 .container{
 	background-color:#333;
 	width: 400px;
 	font-size:small;
-	height:90%;
-	overflow-y:auto;
-	z-index: 1;
+	height:88%;
+	overflow:auto;
+	z-index: 2;
 	position:absolute;
 	/*top: 85px;
 	left:0px;*/
 	opacity: 0.9;
-	margin-left:100px;
-	padding-bottom:20px;
+	/*margin-left:100px;*/
+	padding-bottom:6%;
+	padding-top:6%;
 	/*background: linear-gradient(rgba(0,0,0,0.9),rgba(150,150,150,0.75));*/
 }
 
 .event_container{
 	height:100px;
 	margin-left:10px;
-	padding:25px;
+	margin-right:10px;
+	padding-bottom:5px;
+	padding-top:5px;
+	border-bottom:1px solid #999;
 }
 
 .poster {
-	max-height:125px;
-	width:100px;
+	max-height:100px;
+	width:75px;
 	float:right;
 }
 .event_info {
@@ -83,4 +97,11 @@ html, body{
 	height:0px;
 	overflow:hidden;
 }
+
+
+
+
+
+
+
 

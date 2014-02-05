@@ -41,7 +41,9 @@ class Event < ActiveRecord::Base
 				new_event.description = sdoc
 			 	new_event.save			
 			end
+
 		end
+		
 	end
 
 

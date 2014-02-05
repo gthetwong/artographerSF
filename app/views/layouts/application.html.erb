@@ -4,14 +4,28 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
   <title>Artographer</title>
-
+  <%= include_gon %>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSwOFjXD4yZB8Hyjh0crY3aeBX9IcTm64&sensor=false"></script>
-  
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
-  
+  <link href="assets/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
+  <script src="assets/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+    $(window).load(function(){
+$(".container").mCustomScrollbar({
+        mouseWheel:true,
+        scrollButtons:{enable:true},
+        alwaysShowScrollbar: true,
+        autoHideScrollbar: false,
+        advanced:{updateOnContentResize: true
+	}
+  });
+});
+</script>
 
 
 </head>

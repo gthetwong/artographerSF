@@ -13,9 +13,9 @@
 
 
 
-<div class="container nano">
-	<%for x in Event.all[0...10] do %>
-	<div class="event_container content"> 
+<div class="container">
+	<%for x in Event.all[0...15] do %>
+	<div class="event_container "> 
 		<img class="poster" src="<%=x.image%>" />
 		<div class="event_info"> 
 			<h4><%= x.name %></h4>
@@ -27,5 +27,5 @@
 		</div><!--end_description-->
 	</div><!--end_event_container-->
 	<%end%>
-
 </div><!--end_container-->
+
