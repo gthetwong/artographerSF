@@ -73,6 +73,7 @@ class Event < ActiveRecord::Base
 	def self.marker_data
 		events = Event.all
 		events.each do |event|
+			event.name
 		end
 	end
 
