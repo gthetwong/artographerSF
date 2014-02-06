@@ -1,9 +1,15 @@
-$(document).ready(function(){$(".toggle_btn a").click(function( event ) {
+$(document).on('ready page:load', function(){
+    $(".toggle_btn a").click(function( event ) {
     event.preventDefault();
     console.log(this);
     $('.toggle_container').toggleClass("toggle"); 
     });
 });
+
+
+$(document).on('ready page:load', function(){
+    
+})
 
 
 
