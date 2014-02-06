@@ -13,7 +13,8 @@
 		<div class="event_info"> 
 			<h4><%= x.name %></h4>
 			<p><%= x.location.split("@").last %></p>
-			<p><%= x.time %></p> 
+			
+			<p><%= x.time.strftime(format="%b %e @%l:%M %p") %></p> 
 		</div><!--end_event_info-->
 		<div class="description">
 			<%= x.description.html_safe%>
