@@ -9,6 +9,48 @@
 }
 
 
+/*------------NAV STYLING-------------*/
+.toggle_btn {
+	position:absolute;
+	top:10px;
+	right:25px;
+	opacity:0.8;
+	z-index: 3;
+}
+
+.toggle {
+	display:none;
+}
+
+.toggle_container{
+	background-color:rgba(200,200,200,0.8);
+	width:150px;
+	position:absolute;
+	top:55px;
+	right:25px;
+	padding-bottom:10px;
+	padding-right:5px;
+	border-radius:6px;
+	z-index: 3;
+}
+.right {
+	float:right;
+}
+
+.signin {
+	z-index:3;
+}
+.signin li a{
+	color:#333;
+	padding:4px;
+}
+
+
+
+
+
+
+
 /*------------MAP STYLING--------------*/
 html, body{
         height: 100%;
@@ -51,16 +93,7 @@ html, body{
 .head h1 {
 	z-index:3;	
 }
-.signin {
-	display:inline-block;
-	position:absolute;
-	top:0;
-	right:25px;
-	z-index:3;
-}
-.signin li a{
-	color:#333;
-}
+
 		/*----end_header----*/
 
 

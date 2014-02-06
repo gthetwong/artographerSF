@@ -46,5 +46,20 @@ class Event < ActiveRecord::Base
 		
 	end
 
+	def self.get_lat
+		marker_coords = {}
+		marker_array = []
+		for x in Event.all[0...15] do 
+			i = 0
+			address_raw = x.location.split("@").last
+			address = address_raw.gsub(/[ ]/,"+")
+			t_request = Typhoeus::Request.get("http://maps.googleapis.com/maps/api/geocode/json?address=#{address}&sensor=false")
+			marker_array << JSON.parse(t_request.body)
+		marker_coords[x.name] =  marker_array[i]["results"][0]["geometry"]["location"]
+		i += 1
+		end
+		marker_coords
+	end
+
 
 end

@@ -14,33 +14,26 @@
   <link href="assets/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
   <script src="assets/jquery.mCustomScrollbar.concat.min.js"></script>
 
-<script>
-    $(window).load(function(){
-$(".container").mCustomScrollbar({
-        mouseWheel:true,
-        scrollButtons:{enable:true},
-        alwaysShowScrollbar: true,
-        autoHideScrollbar: false,
-        advanced:{updateOnContentResize: true
-	}
-  });
-});
-</script>
-
-
 </head>
 <body>
-<ul class="signin">
+<div class="toggle_btn">
+<a href=""><img src="/assets/User-Profile-128.png" height="40"></a>
+</div>
+<div class="toggle_container toggle">
+	<ul class="signin">
         <% if signed_in? %>
-          <li><%= link_to "My profile", current_user %></li>
+          <li><%= link_to "My profile", current_user, :class=>"right" %></li>
+          <hr class="right">
           <li>
-            <%= link_to "Sign out", signout_path, method: "delete" %>
+            <%= link_to "Sign out", signout_path, method: "delete", :class=>"right" %>
           </li>
         <% else %>
-          <li>New User? <%= link_to "Sign up", signup_path %></li>
-          <li><%= link_to "Sign in", signin_path %></li>
+       	  <li><%= link_to "Sign in", signin_path, :class=>"right" %></li>
+          <hr class="right">
+          <li class="right">New User? <%= link_to "Sign up", signup_path, :class=>"right" %></li>
         <% end %>
-</ul>
+	</ul>
+</div>
 <%= yield %>
 <div id="map-canvas" class="mapper"></div>
 </body>

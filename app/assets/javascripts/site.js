@@ -1,4 +1,21 @@
+$(".toggle_btn").click(function( event ) {
+    event.preventDefault();
+    $('.toggle_container').toggleClass("toggle"); 
+});
 
+
+
+function scroller(){
+$(".container").mCustomScrollbar({
+        mouseWheel:true,
+        scrollButtons:{enable:true},
+        alwaysShowScrollbar: true,
+        autoHideScrollbar: false,
+        advanced:{updateOnContentResize: true
+    }
+  });
+};
+$(document).on('ready page:load', scroller)
 
 var style_array = [
     {
@@ -129,10 +146,14 @@ function initialize() {
     streetViewControlOptions: {
         position: google.maps.ControlPosition.RIGHT_BOTTOM
     }
+
+
+
     }
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
  };
+
 $(document).on('ready page:load', initialize);
 
 
