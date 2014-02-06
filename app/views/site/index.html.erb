@@ -4,7 +4,7 @@
 
 
 <div id="container" class="container">
-	<%for x in Event.all[0...15] do %>
+	<%for x in Event.all[0...-15] do %>
 	<div class="event_container "> 
 		<img class="poster" src="<%=x.image%>" />
 		<div class="event_info"> 

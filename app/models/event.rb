@@ -61,5 +61,13 @@ class Event < ActiveRecord::Base
 		marker_coords
 	end
 
+	def self.cleanse
+		events = Event.all
+		events.each do |event|
+			if event.closing.to_date < Date.today
+				event.destroy
+		 	end
+		end
+	end
 
 end

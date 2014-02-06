@@ -1,5 +1,6 @@
-$(".toggle_btn").click(function( event ) {
+$(".toggle_btn a").click(function( event ) {
     event.preventDefault();
+    console.log(this);
     $('.toggle_container').toggleClass("toggle"); 
 });
 

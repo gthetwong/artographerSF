@@ -11,13 +11,15 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
-  <link href="assets/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
-  <script src="assets/jquery.mCustomScrollbar.concat.min.js"></script>
+  <%= stylesheet_link_tag "jquery.mCustomScrollbar.css", media: "all" %>
+  <%= javascript_include_tag "jquery.mCustomScrollbar.concat.min.js" %>
+  <!--<link href="assets/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
+  <script src="assets/jquery.mCustomScrollbar.concat.min.js"></script>-->
 
 </head>
 <body>
 <div class="toggle_btn">
-<a href=""><img src="/assets/User-Profile-128.png" height="40"></a>
+<a href=""><%= image_tag "User-Profile-128.png", height: 40 %></a>
 </div>
 <div class="toggle_container toggle">
 	<ul class="signin">
