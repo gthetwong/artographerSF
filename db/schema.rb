@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(version: 20140206015615) do
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "location"
-    t.string   "time"
+    t.datetime "time"
     t.text     "description"
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "closing"
+    t.datetime "closing"
   end
 
   create_table "user_events", force: true do |t|

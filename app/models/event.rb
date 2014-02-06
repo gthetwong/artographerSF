@@ -49,8 +49,8 @@ class Event < ActiveRecord::Base
 	def self.get_lat
 		marker_coords = {}
 		marker_array = []
+		i = 0
 		for x in Event.all[0...15] do 
-			i = 0
 			address_raw = x.location.split("@").last
 			address = address_raw.gsub(/[ ]/,"+")
 			t_request = Typhoeus::Request.get("http://maps.googleapis.com/maps/api/geocode/json?address=#{address}&sensor=false")
@@ -67,6 +67,12 @@ class Event < ActiveRecord::Base
 			if event.closing.to_date < Date.today
 				event.destroy
 		 	end
+		end
+	end
+
+	def self.marker_data
+		events = Event.all
+		events.each do |event|
 		end
 	end
 
