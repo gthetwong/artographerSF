@@ -11,13 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203234948) do
+ActiveRecord::Schema.define(version: 20140206015615) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "location"
     t.string   "time"
-    t.string   "description"
+    t.text     "description"
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20140203234948) do
     t.datetime "updated_at"
   end
 
-  add_index "user_events", ["event_id"], name: "index_user_events_on_event_id"
-  add_index "user_events", ["user_id"], name: "index_user_events_on_user_id"
+  add_index "user_events", ["event_id"], name: "index_user_events_on_event_id", using: :btree
+  add_index "user_events", ["user_id"], name: "index_user_events_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -43,6 +46,6 @@ ActiveRecord::Schema.define(version: 20140203234948) do
     t.string   "remember_token"
   end
 
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

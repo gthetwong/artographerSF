@@ -31,7 +31,7 @@ class Event < ActiveRecord::Base
 
 			 	doc = Nokogiri::HTML(events["description"]) 
 					 image_tag = doc.at_css('img') 
-					 unless image_tag.nil?
+					 unless image_tag.nil? || image_tag.attribute("src").value.length > 255
 					 	img_src = image_tag.attribute("src")
 					 end
 				new_event.image = img_src.to_s

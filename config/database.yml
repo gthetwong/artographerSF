@@ -20,7 +20,7 @@ test:
   pool: 5
 
 production:
- adapter: postgresql
+  adapter: postgresql
   encoding: unicode
   database: artographer
   pool: 5
