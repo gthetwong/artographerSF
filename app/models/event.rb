@@ -14,7 +14,7 @@ class Event < ActiveRecord::Base
 			end_date = events["end"]["dateTime"]
 			event = end_date.to_date
 		 	
-		 		if event > Date.today
+		 		if event >= Date.today
 		 			request << events
 		 		end
 		 	end
