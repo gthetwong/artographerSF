@@ -23,17 +23,19 @@
 }
 
 .toggle {
-	opacity:0;
+	display:none;
 }
 
 .toggle_container{
-	background-color:rgba(200,200,200,0.8);
-	width:150px;
+	background-color:#333;
+	opacity:.9;
+	width:110px;
 	position:absolute;
 	top:75px;
 	right:25px;
+	padding-left:-15px;
 	padding-bottom:10px;
-	padding-right:5px;
+	padding-right:25px;
 	border-radius:6px;
 	transition: .3s all ease;
 	z-index: 3;
@@ -46,9 +48,10 @@
 	z-index:3;
 }
 .signin li a{
-	color:#333;
+	color:orange;
 	padding:4px;
 }
+
 
 .list_btn {
 	position:absolute;
