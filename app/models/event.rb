@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
-	has_many :user_events
-	has_many :users, through: :user_events
+	has_many :outings
+	has_many :users, through: :outings
 
 
 	def self.load_info
@@ -47,27 +47,26 @@ class Event < ActiveRecord::Base
 	end
 
 	def self.get_lat
-		marker_coords = {}
-		marker_array = []
-		i = 0
-		for x in Event.all[0...-1] do 
+			@marker_coords = {}
+			marker_array = []
+			i = 0
+			for x in Event.all[0...-1] do 
 
-			unless x.location == nil || x.location.include?("@")==false
-				address_raw = x.location.split("@").last
-
-				address = address_raw.gsub(/[ ]/,"+")
-				t_request = Typhoeus::Request.get("http://maps.googleapis.com/maps/api/geocode/json?address=#{address}&sensor=false")
-				marker_array << JSON.parse(t_request.body)
-				begin
-					marker_coords[x.name] =  marker_array[i]["results"][0]["geometry"]["location"]
-				ensure
-					i += 1
+				unless x.location == nil || x.location.include?("@")==false
+					address_raw = x.location.split("@").last
+					address = address_raw.gsub(/[ ]/,"+")
+					t_request = Typhoeus::Request.get("http://maps.googleapis.com/maps/api/geocode/json?address=#{address}&sensor=false")
+					marker_array << JSON.parse(t_request.body)
+					begin
+						@marker_coords[x.name] =  marker_array[i]["results"][0]["geometry"]["location"]
+					rescue
+					ensure
+						i += 1
+					end
 				end
 			end
-		end
-		marker_coords
+			@marker_coords
 	end
-
 
 	def self.cleanse
 		events = Event.all
@@ -83,6 +82,7 @@ class Event < ActiveRecord::Base
 		events = Event.all
 		events.each do |event|
 			event.name
+
 		end
 	end
 

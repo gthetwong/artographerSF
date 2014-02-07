@@ -26,5 +26,14 @@ class UsersController < ApplicationController
 	    render :show
 	end
 
+	def add_event
+		id = params[:id]
+		user = current_user
+		event = Event.find(id)
+		user.events << event
+		redirect_to root_path
+		flash[:saved] = "You saved the event!"
+	end
+
 
 end

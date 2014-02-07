@@ -1,8 +1,27 @@
-<div class="signedin">
-    <aside >
-        <section>
-            <h3><%= @user.name %></h3>
-            <h3><%= @user.email %></h3>
-        </section>
-    </aside>
+<h1 class="head"><%=link_to "ArtographerSF", root_path %></h1>
+<div class="container">
+	<div class="signedin">
+	    <aside >
+	        <section>
+	            <h2>Hi <%= @user.name %>!</h2>
+	            <h3>You're signed in with <%= @user.email %></h3>
+	        </section>
+	        <section>
+	        	<h2>Saved Events: </h2>
+	        	<ul>
+	        		<%if @user.events.empty? %>
+	        			<li>You haven't saved any events! </li>
+	        		<%else%>
+	        			<%@user.events.each do |event| %>
+	        				<div>
+			        		<h2><%= event.name %></h2>
+			        		<%= event.location %><br>
+			        		<%= event.time %>
+			        		</div>
+			        		<br>
+		        		<%end%>
+		        	<%end%>
+	        	</ul>
+	    </aside>
+	</div>
 </div>

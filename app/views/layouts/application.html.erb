@@ -25,14 +25,13 @@
 <div class="toggle_container toggle">
 	<ul class="signin">
         <% if signed_in? %>
-          <li><%= link_to "My profile", current_user, :class=>"right" %></li>
+          <li><%= link_to "My Profile", current_user, :class=>"right" %></li>
          
           <li><%= link_to "Sign out", signout_path, method: "delete", :class=>"right" %>
           </li>
         <% else %>
-       	  <li><%= link_to "Sign in", signin_path, :class=>"right" %></li>
-          
           <li class="right"> <%= link_to "Sign up", signup_path, :class=>"right" %></li>
+       	  <li><%= link_to "Sign in", signin_path, :class=>"right" %></li>
         <% end %>
 	</ul>
 </div>

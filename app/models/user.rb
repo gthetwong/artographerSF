@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
-	has_many :user_events
-	has_many :users, through: :user_events
+	has_many :outings
+	has_many :events, through: :outings
 
 
 

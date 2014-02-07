@@ -29,11 +29,11 @@
 .toggle_container{
 	background-color:#333;
 	opacity:.9;
-	width:110px;
+	width:150px;
 	position:absolute;
 	top:75px;
 	right:25px;
-	padding-left:-15px;
+	padding-left:-25px;
 	padding-bottom:10px;
 	padding-right:25px;
 	border-radius:6px;
@@ -50,6 +50,7 @@
 .signin li a{
 	color:orange;
 	padding:4px;
+	margin:5px;
 }
 
 
@@ -120,7 +121,7 @@ html, body{
 		/*----Event-list----*/
 .container{
 	background-color:#333;
-	width: 400px;
+	width: 425px;
 	font-size:small;
 	height:88%;
 	overflow:auto;
@@ -129,7 +130,7 @@ html, body{
 	/*top: 85px;
 	left:0px;*/
 	opacity: 0.9;
-	padding-left:15px;
+	padding-left:35px;
 	padding-bottom:6%;
 	padding-top:8%;
 	transition: .4s all ease;
@@ -137,12 +138,22 @@ html, body{
 }
 .event_container{
 	height:100px;
-	margin-left:10px;
+	margin-left:20px;
 	margin-right:10px;
-	padding-bottom:5px;
+	padding-left:10px;
 	padding-top:0px;
 	border-bottom:1px solid #999;
 	transition: .4s all ease;
+}
+
+.save_event{
+	border:none;
+	border-radius:100px;
+	position:relative;
+	left:-30px;
+	top:-60px;
+	background-color:orange;
+	z-index:3;	
 }
 
 .poster {
@@ -151,7 +162,7 @@ html, body{
 	float:right;
 }
 .event_info {
-	height:60px;
+	height:70px;
 	width:300px;
 	padding-bottom:10px;
 }
@@ -177,28 +188,32 @@ html, body{
 /*---------------SIGN UP PAGE-----------------*/
 
 .signup{
-	color:#333;
-	margin-left:350px;
+	color:#fff;
+	position:relative;
+	left:100px;
 }
 
 .signup_form{
-	margin-left: 50px;
-	margin-bottom:50px;
+	margin-left:100px;
+	color:#fff;
 }
 
 .signup_form label{
-	color:#333;
-	margin-left:50px;
+	color:#fff;
+	margin-bottom: 5px;
+	padding-bottom:15px;
 }
 
 .signup_form input{
 	color:#333;
+	margin-bottom:15px;
 }
 
-.signup_btn {
+.signup_btn{
 	background-color: orange;
 	border:none;
-	padding:5px;
+	padding:10px;
+	color:#fff;
 }
 
 
@@ -215,8 +230,14 @@ html, body{
 /*-------------PROFILE PAGE--------------------*/
 
 .signedin h3{
-	color:#333;
+	color:#fff;
 }
+
+
+
+
+
+
 
 
 

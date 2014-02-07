@@ -1,17 +1,20 @@
 <h1 class="head"><%=link_to "ArtographerSF", root_path %></h1>
-<h1 class="signup">Sign In</h1>
 
-<div>
+
+<div class ="container">
+    <h1 class="signup">Sign In</h1>
     <div class="signup_form">
         <%= form_for(:session, url: sessions_path) do |f| %>
 
         <%= f.label :email %>
+        <br>
         <%= f.text_field :email %>
-
+        <br>
         <%= f.label :password %>
+        <br>
         <%= f.password_field :password %>
-
-        <%= f.submit "Sign in" %>
+        <br>
+        <%= f.submit "Sign In", :class=>"signup_btn" %>
     <% end %>
     </div>
 </div>
