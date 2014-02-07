@@ -9,6 +9,10 @@
 }
 
 
+.all li{
+	color:#333;
+}
+
 /*------------NAV STYLING-------------*/
 .toggle_btn {
 	position:absolute;

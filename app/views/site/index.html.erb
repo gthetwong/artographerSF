@@ -7,13 +7,14 @@
 </div>
 
 <div id="container" class="container">
-	<%for x in Event.all[0...15] do %>
+	<%for x in Event.all[0...-1] do %>
 	<div class="event_container "> 
 		<img class="poster" src="<%=x.image%>" />
 		<div class="event_info"> 
 			<h4><%= x.name %></h4>
+			<% unless x.location == nil || x.location.include?("@")==false %>
 			<p><%= x.location.split("@").last %></p>
-			
+			<%end%>
 			<p><%= x.time.strftime(format="%b %e @%l:%M %p") %></p> 
 		</div><!--end_event_info-->
 		<div class="description">
