@@ -57,12 +57,11 @@ class Event < ActiveRecord::Base
 			marker_array << JSON.parse(t_request.body)
 		
 		marker_coords[x.name] =  marker_array[i]["results"][0]["geometry"]["location"]
-		
 		i += 1
 		end
 		marker_coords
-		
 	end
+
 
 	def self.cleanse
 		events = Event.all
@@ -72,6 +71,7 @@ class Event < ActiveRecord::Base
 		 	end
 		end
 	end
+
 
 	def self.marker_data
 		events = Event.all
