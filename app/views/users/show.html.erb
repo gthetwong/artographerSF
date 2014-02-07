@@ -1,12 +1,12 @@
 <h1 class="head"><%=link_to "ArtographerSF", root_path %></h1>
 <div class="container">
 	<div class="signedin">
-	    <aside >
-	        <section>
+	    <aside>
+	        <section class="profile_header">
 	            <h2>Hi <%= @user.name %>!</h2>
 	            <h3>You're signed in with <%= @user.email %></h3>
 	        </section>
-	        <section>
+	        <section class="profile_body">
 	        	<h2>Saved Events: </h2>
 	        	<ul>
 	        		<%if @user.events.empty? %>

@@ -11,7 +11,7 @@ $(document).on('ready page:load', function(){
     event.preventDefault();
     $(".list_btn img").toggleClass('spin');
     $('#container').toggleClass("shifted");
-// animate({marginLeft:"-1000px"});
+    $('.head').toggleClass("headbgd");
    });
 });
 

@@ -115,6 +115,13 @@ html, body{
 	z-index:3;	
 }
 
+.headbgd{
+	background-color:#333;
+	opacity:.9;
+	padding:15px;
+	border-radius:10px;
+}
+
 		/*----end_header----*/
 
 
@@ -227,13 +234,132 @@ html, body{
 
 
 
+
+
 /*-------------PROFILE PAGE--------------------*/
 
 .signedin h3{
 	color:#fff;
 }
+.profile_header {
+	margin-left:50px;
+}
+
+.profile_body{
+	margin-left:50px;
+}
 
 
+
+
+/*------------MEDIA QUERIES--------------------*/
+
+
+
+
+@media (max-width: 600px) {
+
+.head {
+	margin-left:33%;
+	height:5%;
+	font-size:30px;
+}
+
+.container{
+	width: 100%;
+	height:100%;
+	padding-left:0px;
+	padding-bottom:10%;
+	padding-top:15%;
+}
+
+
+.event_container{
+	height:auto;
+	padding-top:0px;
+	padding-bottom:10px;
+}
+
+.event_info {
+	height:auto;
+	width:100%;
+}
+
+.list_btn {
+	position:absolute;
+	top:15px;
+	left:5px;
+}
+
+.toggle_btn {
+	position:absolute;
+	top:15px;
+	right:5px;
+}
+
+.signup_form{
+	margin-left:33%;
+	margin-right:33%;
+}
+
+.signup{
+	position:relative;
+	left:33%;
+}
+
+}
+
+
+
+
+@media (max-width: 400px){
+
+.head {
+	margin-left:25%;
+	height:5%;
+	font-size:24px;
+}
+
+.container{
+	height:100%;
+	padding-bottom:25%;
+	padding-top:25%;
+}
+
+.event_container{
+	height:auto;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+.event_info {
+	height:auto;
+	width:100%;
+}
+
+.list_btn {
+	position:absolute;
+	top:15px;
+	left:5px;
+}
+
+.toggle_btn {
+	position:absolute;
+	top:15px;
+	right:5px;
+}
+
+
+.signup_form{
+	margin-left:25%;
+	margin-right:25%;
+}
+
+
+.profile_header {
+}
+
+}
 
 
 
