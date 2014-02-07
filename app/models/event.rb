@@ -55,10 +55,13 @@ class Event < ActiveRecord::Base
 			address = address_raw.gsub(/[ ]/,"+")
 			t_request = Typhoeus::Request.get("http://maps.googleapis.com/maps/api/geocode/json?address=#{address}&sensor=false")
 			marker_array << JSON.parse(t_request.body)
+		
 		marker_coords[x.name] =  marker_array[i]["results"][0]["geometry"]["location"]
+		
 		i += 1
 		end
 		marker_coords
+		
 	end
 
 	def self.cleanse

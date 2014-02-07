@@ -15,6 +15,13 @@ $(document).on('ready page:load', function(){
    });
 });
 
+$(document).on('ready page:load', function(){
+    $(".event_container",this).click(function(event){
+        $(this).toggleClass('size_auto');
+        $('.event_info',this).next('.description').toggleClass('size_auto');
+    })
+})
+
 
 
 function scroller(){
