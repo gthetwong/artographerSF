@@ -27,6 +27,7 @@ $(document).on('ready page:load', function(){
 function scroller(){
 $(".container").mCustomScrollbar({
         mouseWheel:true,
+        mouseWheelPixels: 200,
         scrollButtons:{enable:true},
         alwaysShowScrollbar: true,
         autoHideScrollbar: false,
