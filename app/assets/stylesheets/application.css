@@ -259,10 +259,13 @@ html, body{
 
 @media (max-width: 600px) {
 
-.head {
-	margin-left:33%;
+.headbgd {
 	height:5%;
 	font-size:30px;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
 }
 
 .container{
@@ -314,10 +317,13 @@ html, body{
 
 @media (max-width: 400px){
 
-.head {
-	margin-left:25%;
+.headbgd {
 	height:5%;
-	font-size:24px;
+	font-size:30px;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
 }
 
 .container{
