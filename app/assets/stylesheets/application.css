@@ -19,7 +19,7 @@
 	top:25px;
 	right:25px;
 	opacity:0.8;
-	z-index: 3;
+	z-index: 5;
 }
 
 .toggle {
@@ -99,7 +99,7 @@ html, body{
 	position:absolute;
 	top:0px;
 	left:0px;
-	margin-left:100px;
+	padding-left:100px;
 /*	margin-top:10px;
 	margin-bottom:10px;
 */	font-weight:300;
@@ -107,7 +107,7 @@ html, body{
 	height:5%;
 	z-index:3;
 	color: orange;
-	
+	margin-top:0;
 }
 .head a {
 	color: orange;
@@ -121,6 +121,8 @@ html, body{
 	opacity:.9;
 	padding:15px;
 	width:100%;
+	padding-left:30%;
+	height:12%;
 }
 
 		/*----end_header----*/
@@ -264,15 +266,22 @@ html, body{
 
 @media (max-width: 600px) {
 
+.head {
+	height:15%;
+margin-top:0;
+padding-top:3%;
+}
+
 .headbgd {
-	height:5%;
-	font-size:30px;
 	width:100%;
 	position:absolute;
 	top:0;
 	left:0;
-	margin-left:0;
+	margin-left:0px;
 	padding:0;
+	margin-top:0;
+	padding-left:25%;
+	padding-top:3%;
 }
 
 .container{
@@ -305,6 +314,7 @@ html, body{
 	position:absolute;
 	top:15px;
 	right:5px;
+	z-index:5;
 }
 
 .signup_form{
@@ -326,17 +336,24 @@ html, body{
 
 .head {
 	font-size:20px;
+		height:15%;
+		margin-left:0;
+		padding-left:25%;
+		/*width:100%;*/
+		margin-top:0;
+		padding-top:6%;
 }
 
 .headbgd {
-	height:5%;
-	width:auto;
+	width:100%;
 	position:absolute;
 	top:0;
 	left:0;
 	margin-left:0px;
 	padding:0;
-
+	margin-top:0;
+	padding-left:25%;
+	padding-top:6%;
 }
 
 .container{
@@ -366,6 +383,7 @@ html, body{
 	position:absolute;
 	top:15px;
 	right:5px;
+	z-index:5;
 }
 
 
@@ -375,10 +393,7 @@ html, body{
 }
 
 
-.profile_header {
-}
 
-}
 
 
 
