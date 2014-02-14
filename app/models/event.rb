@@ -10,9 +10,9 @@ class Event < ActiveRecord::Base
 		
 		request = []
 		@parsed["items"].each do |events|
-			if events["end"]["dateTime"] != nil
-			end_date = events["end"]["dateTime"]
-			event = end_date.to_date
+			if events["start"]["dateTime"] != nil
+			end_date = events["start"]["dateTime"]
+			event = (end_date.to_date)-1
 		 	
 		 		if event < Date.today
 		 		else

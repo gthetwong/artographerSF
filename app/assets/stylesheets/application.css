@@ -107,6 +107,7 @@ html, body{
 	height:5%;
 	z-index:3;
 	color: orange;
+	
 }
 .head a {
 	color: orange;
@@ -119,7 +120,7 @@ html, body{
 	background-color:#333;
 	opacity:.9;
 	padding:15px;
-	border-radius:10px;
+	width:100%;
 }
 
 		/*----end_header----*/
@@ -139,7 +140,7 @@ html, body{
 	opacity: 0.9;
 	padding-left:35px;
 	padding-bottom:6%;
-	padding-top:8%;
+	padding-top:6%;
 	transition: .4s all ease;
 	/*background: linear-gradient(rgba(0,0,0,0.9),rgba(150,150,150,0.75));*/
 }
@@ -172,6 +173,10 @@ html, body{
 	height:70px;
 	width:300px;
 	padding-bottom:10px;
+}
+
+.event_info h3{
+	color:orange;
 }
 .event_info p {
 	margin-top:-10px;
@@ -266,6 +271,8 @@ html, body{
 	position:absolute;
 	top:0;
 	left:0;
+	margin-left:0;
+	padding:0;
 }
 
 .container{
@@ -317,13 +324,19 @@ html, body{
 
 @media (max-width: 400px){
 
+.head {
+	font-size:20px;
+}
+
 .headbgd {
 	height:5%;
-	font-size:30px;
-	width:100%;
+	width:auto;
 	position:absolute;
 	top:0;
 	left:0;
+	margin-left:0px;
+	padding:0;
+
 }
 
 .container{

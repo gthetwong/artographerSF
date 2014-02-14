@@ -14,7 +14,7 @@
 		<img class="poster" src="<%=x.image%>" />
 
 		<div class="event_info"> 
-			<h4><%= x.name %></h4>
+			<h3><%= x.name %></h3>
 			<% unless x.location == nil || x.location.include?("@")==false %>
 			<p><%= x.location.split("@").last %></p>
 			<%end%>
