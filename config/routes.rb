@@ -1,7 +1,7 @@
 Artographer::Application.routes.draw do
 
 get '/events/all' => 'events#all'
-post '/events/:id' => 'users#add_event'
+post '/events/:id' => 'events#create'
 
     resources :site, :events, :users, :sessions
 

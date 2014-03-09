@@ -15,7 +15,7 @@
 
 /*------------NAV STYLING-------------*/
 .toggle_btn {
-	position:absolute;
+	position:fixed;
 	top:25px;
 	right:25px;
 	opacity:0.8;
@@ -30,7 +30,7 @@
 	background-color:#333;
 	opacity:.9;
 	width:150px;
-	position:absolute;
+	position:fixed;
 	top:75px;
 	right:25px;
 	padding-left:-25px;
@@ -55,7 +55,7 @@
 
 
 .list_btn {
-	position:absolute;
+	position:fixed;
 	top:25px;
 	left:25px;
 	z-index: 3;
@@ -96,33 +96,35 @@ html, body{
 
 				/*--header--*/
 .head {
-	position:absolute;
+	width: 425px;
+	position:fixed;
 	top:0px;
 	left:0px;
-	padding-left:100px;
-/*	margin-top:10px;
-	margin-bottom:10px;
-*/	font-weight:300;
+	font-weight:300;
 	color:#333;
 	height:5%;
 	z-index:3;
 	color: orange;
 	margin-top:0;
+	text-align:center;	
 }
 .head a {
 	color: orange;
+
 }
 .head h1 {
-	z-index:3;	
+	z-index:3;
+
 }
 
 .headbgd{
 	background-color:#333;
 	opacity:.9;
-	padding:15px;
-	width:100%;
-	padding-left:30%;
-	height:12%;
+	/*padding:15px;*/
+	/*width:100%;*/
+/*	padding-left:30%;
+*/	height:10%;
+	width: 425px;
 }
 
 		/*----end_header----*/
@@ -136,7 +138,7 @@ html, body{
 	height:88%;
 	overflow:auto;
 	z-index: 2;
-	position:absolute;
+	position:fixed;
 	/*top: 85px;
 	left:0px;*/
 	opacity: 0.9;
@@ -269,24 +271,27 @@ html, body{
 .head {
 	height:15%;
 margin-top:0;
-padding-top:3%;
+text-align:center;
+width:100%;
+/*padding-top:3%;*/
 }
 
 .headbgd {
 	width:100%;
-	position:absolute;
+	position:fixed;
 	top:0;
 	left:0;
 	margin-left:0px;
 	padding:0;
 	margin-top:0;
-	padding-left:25%;
-	padding-top:3%;
+	/*padding-left:25%;*/
+	/*padding-top:3%;*/
+	text-align:center;
 }
 
 .container{
 	width: 100%;
-	height:100%;
+	height:88%;
 	padding-left:0px;
 	padding-bottom:10%;
 	padding-top:15%;
@@ -305,13 +310,13 @@ padding-top:3%;
 }
 
 .list_btn {
-	position:absolute;
+	position:fixed;
 	top:15px;
 	left:5px;
 }
 
 .toggle_btn {
-	position:absolute;
+	position:fixed;
 	top:15px;
 	right:5px;
 	z-index:5;
@@ -346,7 +351,7 @@ padding-top:3%;
 
 .headbgd {
 	width:100%;
-	position:absolute;
+	position:fixed;
 	top:0;
 	left:0;
 	margin-left:0px;
@@ -374,13 +379,13 @@ padding-top:3%;
 }
 
 .list_btn {
-	position:absolute;
+	position:fixed;
 	top:15px;
 	left:5px;
 }
 
 .toggle_btn {
-	position:absolute;
+	position:fixed;
 	top:15px;
 	right:5px;
 	z-index:5;

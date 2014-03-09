@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Artographer::Application.config.secret_key_base = '3597064268a5c490e0ac43270e1c554d912fc69e740670cf504a98c68fd97cfb90b1ad014717490e78537bbac34dd9f90a1c450dc7021e921a7df382ef4839e0'
+Artographer::Application.config.secret_key_base = ENV["SECRET_KEY_BASE"]

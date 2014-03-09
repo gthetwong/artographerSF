@@ -1,23 +1,22 @@
 class UsersController < ApplicationController
 
 	def show
-    	@user = User.find(params[:id])
+  	@user = User.find(params[:id])
 	end
 
 	def new
-    	@user = User.new()
+  	@user = User.new()
 	end
 
 	def create
     	new_user = params.require(:user).permit(:name, :email, :password, :password_confirmation)
     	@user=User.new(new_user)
-    	if @user.save
-        	flash[:success] = "Welcome to ArtographerSF"
-        # sign_in @user
-        	redirect_to @user
-    	else
-        	render'new'
-    	end
+      	if @user.save
+          flash[:success] = "Welcome to ArtographerSF"
+          redirect_to @user
+      	else
+          render'new'
+      	end
 	end
 
 	def update
@@ -25,15 +24,5 @@ class UsersController < ApplicationController
 	    @user.update_attributes(params[:user])
 	    render :show
 	end
-
-	def add_event
-		id = params[:id]
-		user = current_user
-		event = Event.find(id)
-		user.events << event
-		redirect_to root_path
-		flash[:saved] = "You saved the event!"
-	end
-
 
 end

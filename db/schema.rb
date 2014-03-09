@@ -37,16 +37,6 @@ ActiveRecord::Schema.define(version: 20140207071158) do
   add_index "outings", ["event_id"], name: "index_outings_on_event_id", using: :btree
   add_index "outings", ["user_id"], name: "index_outings_on_user_id", using: :btree
 
-  create_table "user_events", force: true do |t|
-    t.integer  "event_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "user_events", ["event_id"], name: "index_user_events_on_event_id", using: :btree
-  add_index "user_events", ["user_id"], name: "index_user_events_on_user_id", using: :btree
-
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"

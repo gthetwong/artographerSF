@@ -4,7 +4,4 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   protect_from_forgery with: :exception 
   require 'google/api_client'
-  require 'typhoeus'
-  require 'date'
-  require 'nokogiri'
 end
