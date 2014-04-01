@@ -43,6 +43,7 @@ end
 # Use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.1.2'
 
+gem 'dotenv-rails'
 # Use unicorn as the app server
 gem 'unicorn'
 

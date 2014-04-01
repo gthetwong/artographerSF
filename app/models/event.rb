@@ -3,6 +3,9 @@ class Event < ActiveRecord::Base
 	has_many :users, through: :outings
 
 
+
+
+
 	def self.load_info
 		t_request = Typhoeus::Request.get("https://www.googleapis.com/calendar/v3/calendars/uc324abr4ul27jvk69hcd4kg39d9naq3@import.calendar.google.com/events?key=AIzaSyDvaaalnZCpnuNonahsZF3RSctJ6wRSdgE")
 		@parsed = JSON.parse(t_request.body)
