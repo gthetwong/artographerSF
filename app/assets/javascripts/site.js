@@ -19,8 +19,8 @@ $(document).on('ready page:load', function(){
     $(".event_container",this).click(function(event){
         $(this).toggleClass('size_auto');
         $('.event_info',this).next('div .description').toggleClass('size_auto');
-    })
-})
+    });
+});
 
 
 
@@ -34,8 +34,9 @@ $(".container").mCustomScrollbar({
         advanced:{updateOnContentResize: true
     }
   });
-};
-$(document).on('ready page:load', scroller)
+}
+
+$(document).on('ready page:load', scroller);
 
 
 
@@ -136,11 +137,11 @@ var style_array = [
         "featureType": "landscape.man_made",
         "elementType": "geometry",
         "stylers": [
-            		{"weight": 0.9 },
-            		{"visibility": "on"}
-        		   ]
+                    {"weight": 0.9 },
+                    {"visibility": "on"}
+                   ]
     }
-]
+];
 
 var map;
 function initialize() {
@@ -171,7 +172,7 @@ function initialize() {
 
 
 
-    }
+    };
  var map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
@@ -203,34 +204,32 @@ for (var i = 0; i < arr.length; i++){
     map: map,
     animation: google.maps.Animation.DROP,
     title: name_arr[i]
-    })
+    });
 
  // function addMarker() {
  //  markers.push(marker)
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
+            //fill in content
           infowindow.setContent();
           infowindow.open(map, marker);
-        }
+          //center on marker
+        };
       })(marker, i));
   }
 }
 
- };
+ }
 
 $(document).on('ready page:load', initialize);
 
 
 
 
-// for (var i = 0; i < gon.values.length; i++){
-//  var marker = new google.maps.Marker({
-//     position: (gon.values[i]["lat"], gon.values[i]["lng"]),
-//     map: map,
-//     title:"Hello World!"
-// });
-// }
-// });
+
+
+
+
 
 /*mousewheel*/
 (function(a){function d(b){var c=b||window.event,d=[].slice.call(arguments,1),e=0,f=!0,g=0,h=0;return b=a.event.fix(c),b.type="mousewheel",c.wheelDelta&&(e=c.wheelDelta/120),c.detail&&(e=-c.detail/3),h=e,c.axis!==undefined&&c.axis===c.HORIZONTAL_AXIS&&(h=0,g=-1*e),c.wheelDeltaY!==undefined&&(h=c.wheelDeltaY/120),c.wheelDeltaX!==undefined&&(g=-1*c.wheelDeltaX/120),d.unshift(b,e,g,h),(a.event.dispatch||a.event.handle).apply(this,d)}var b=["DOMMouseScroll","mousewheel"];if(a.event.fixHooks)for(var c=b.length;c;)a.event.fixHooks[b[--c]]=a.event.mouseHooks;a.event.special.mousewheel={setup:function(){if(this.addEventListener)for(var a=b.length;a;)this.addEventListener(b[--a],d,!1);else this.onmousewheel=d},teardown:function(){if(this.removeEventListener)for(var a=b.length;a;)this.removeEventListener(b[--a],d,!1);else this.onmousewheel=null}},a.fn.extend({mousewheel:function(a){return a?this.bind("mousewheel",a):this.trigger("mousewheel")},unmousewheel:function(a){return this.unbind("mousewheel",a)}})})(jQuery);

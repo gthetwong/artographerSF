@@ -7,6 +7,8 @@ class Event < ActiveRecord::Base
 
 
 	def self.load_info
+		#loads all info on page request
+
 		t_request = Typhoeus::Request.get("https://www.googleapis.com/calendar/v3/calendars/uc324abr4ul27jvk69hcd4kg39d9naq3@import.calendar.google.com/events?key=AIzaSyDvaaalnZCpnuNonahsZF3RSctJ6wRSdgE")
 		@parsed = JSON.parse(t_request.body)
 		request = []
@@ -49,15 +51,23 @@ class Event < ActiveRecord::Base
 		marker_array = []
 		i = 0
 			for x in Event.all[0...-1] do 
+				#unless location is nil or does not include an @ symbol
 				unless x.location == nil || x.location.include?("@")==false
+					#the raw address will be the second half of the split after the @ symbol
 					address_raw = x.location.split("@").last
+					#substitute any spaces for pluses
 					address = address_raw.gsub(/[ ]/,"+")
+					#make a typhoeus request using the new concatenated address to the geolocator
 					t_request = Typhoeus::Request.get("http://maps.googleapis.com/maps/api/geocode/json?address=#{address}&sensor=false")
+					#push the parsed body of the request into the marker array
 					marker_array << JSON.parse(t_request.body)
+					#since Google geolocator only allows 5 requests to be made at once, we need a rescue
 						begin
+							#create a key using the name of the event(the gallery show title) and a value of that show's location coords
 							@marker_coords[x.name] =  marker_array[i]["results"][0]["geometry"]["location"]
 						rescue
 						ensure
+							#ensure that the iterator gets incremented
 							i += 1
 						end
 				end
@@ -66,6 +76,7 @@ class Event < ActiveRecord::Base
 	end
 
 	def self.cleanse
+		#If the event's closing date has already passed, delete the event from the model collection
 		events = Event.all
 		events.each do |event|
 			if event.closing.to_date < Date.today
@@ -77,10 +88,17 @@ class Event < ActiveRecord::Base
 
 	def self.marker_data
 		events = Event.all
+		event_array = []
 		events.each do |event|
-			event.name
+			container= {}
+			container[:name] = event.name
 
+			container[:location] = event.location
+			container[:time] = event.time
+			container[:image] = event.image
+			event_array.push(container)
 		end
+		event_array
 	end
 
 end
