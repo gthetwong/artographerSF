@@ -9,7 +9,7 @@ class Event < ActiveRecord::Base
 	def self.load_info
 		#loads all info on page request
 
-		t_request = Typhoeus::Request.get("https://www.googleapis.com/calendar/v3/calendars/uc324abr4ul27jvk69hcd4kg39d9naq3@import.calendar.google.com/events?key=AIzaSyDvaaalnZCpnuNonahsZF3RSctJ6wRSdgE")
+		t_request = Typhoeus::Request.get("https://www.googleapis.com/calendar/v3/calendars/orougreqvdjcj9iagjhj0qllt6bqj87f@import.calendar.google.com/events?key=AIzaSyDvaaalnZCpnuNonahsZF3RSctJ6wRSdgE")
 		@parsed = JSON.parse(t_request.body)
 		request = []
 		@parsed["items"].each do |events|
