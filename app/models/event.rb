@@ -99,6 +99,7 @@ class Event < ActiveRecord::Base
 			event_array.push(container)
 		end
 		event_array
+	
 	end
 
 end
