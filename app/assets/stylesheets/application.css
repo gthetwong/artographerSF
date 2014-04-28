@@ -90,6 +90,14 @@ html, body{
 	z-index:1;
 }
 
+.infowindow img{
+	float:left;
+}
+.infowindow h5, .infowindow h6{
+	color:#000;
+	float:left;
+}
+
 
 /*-----------INDEX STYLING-------------*/
 

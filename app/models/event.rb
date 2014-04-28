@@ -88,7 +88,7 @@ class Event < ActiveRecord::Base
 
 	def self.marker_data
 		events = Event.all
-		event_array = []
+		@event_array = []
 		events.each do |event|
 			container= {}
 			container[:name] = event.name
@@ -96,10 +96,9 @@ class Event < ActiveRecord::Base
 			container[:location] = event.location
 			container[:time] = event.time
 			container[:image] = event.image
-			event_array.push(container)
+			@event_array.push(container)
 		end
-		event_array
-	
+		@event_array
 	end
 
 end

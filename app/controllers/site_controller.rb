@@ -12,6 +12,7 @@ include SessionsHelper
 		@events_locations = Event.get_lat
 		gon.locations = @events_locations
 		@events_marker_info = Event.marker_data
+		gon.marker_info = @events_marker_info
 
 	end
 
