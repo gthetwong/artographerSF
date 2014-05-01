@@ -90,12 +90,17 @@ html, body{
 	z-index:1;
 }
 
+.infowindow{
+	width:100px;
+}
+
 .infowindow img{
-	float:left;
+	margin: 0 auto;
 }
 .infowindow h5, .infowindow h6{
 	color:#000;
-	float:left;
+	margin:0 auto;
+	width:85px;
 }
 
 

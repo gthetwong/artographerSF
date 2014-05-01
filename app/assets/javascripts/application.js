@@ -123,18 +123,12 @@ $(".container").mCustomScrollbar({
   });
 }
 
-
-$(document).on("ready page:load", function(){
-  slide_events(); 
-  slide_description(); 
-  toggle_signin_button(); 
-  scroller();
-  initialize();
-});
-
-
-
-
+function bindInfoWindow(marker, map, infowindow, strDescription) {
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(strDescription);
+        infowindow.open(map, marker);
+    });
+}
 
 function initialize() {
   //Config the actual Map
@@ -171,48 +165,43 @@ function initialize() {
   var coords = [];
   var event_name = [];
 
-  //iterate through events 
+  //iterate through events and store info into local variables
   for (var keys in gon.locations){
     event_name.push(keys);
     coords.push(gon.locations[keys]);
   }
-
+  //iterate through events again to add markers
   for (var i = 0; i < coords.length; i++){
+    //for each coordinate, create a new content string 
     var contentString = 
-    "<div width='60' height='100' class='infowindow'>"
-    +"<img width='40' src='"+gon.marker_info[i].image+"'>"
-    +"<h5>"+gon.marker_info[i].name +"</h2>"
-    +"<h6>"+gon.marker_info[i].location+"</h2>"
-    +"</div>";
+        "<div class='infowindow'>"
+        +"<img width='40' src='"+gon.marker_info[i].image+"'>"
+        +"<h5>"+gon.marker_info[i].name +"</h2>"
+        +"<h6>"+gon.marker_info[i].location+"</h2>"
+        +"</div>";
 
-    var infowindow = new google.maps.InfoWindow({
-        content: contentString
-    });
-
+    //for each coordinate, create a new infoWindow
+    var infowindow = new google.maps.InfoWindow({content:""});
+    //for each coordinate, create a new marker
     var marker = new google.maps.Marker({
       position: (coords[i]),
       map: map,
       animation: google.maps.Animation.DROP,
       title:event_name[i]
     });
-
-    google.maps.event.addListener(marker, "click", (function(marker){
-        infowindow.open(map, marker);
-        //center on marker
-    }(marker)));
+    //use closure to run an instance of the function for each iteration through the loop
+    bindInfoWindow(marker, map, infowindow, contentString);
   }
-  
-
 }
 
-//function for staggered dropping
-// function drop() {
-      //   for (var i =0; i < markerArray.length; i++) {
-      //     setTimeout(function() {
-      //       addMarkerMethod();
-      //     }, i * 1000);
-      //   }
-      // }
+
+$(document).on("ready page:load", function(){
+  slide_events(); 
+  slide_description(); 
+  toggle_signin_button(); 
+  scroller();
+  initialize();
+});
 
 
 
