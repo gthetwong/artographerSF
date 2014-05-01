@@ -114,7 +114,7 @@ var slide_description = function(){
 function scroller(){
 $(".container").mCustomScrollbar({
         mouseWheel:true,
-        mouseWheelPixels: 200,
+        mouseWheelPixels: 500,
         scrollButtons:{enable:true},
         alwaysShowScrollbar: true,
         autoHideScrollbar: false,
