@@ -163,6 +163,8 @@ function initialize() {
     event_name.push(keys);
     coords.push(gon.locations[keys]);
   }
+  //set the bounding object for the map outside the loop
+  var bounds = new google.maps.LatLngBounds();
   //iterate through events again to add markers
   for (var i = 0; i < coords.length; i++){
     //for each coordinate, create a new content string 
@@ -172,6 +174,8 @@ function initialize() {
         +"<h5>"+gon.marker_info[i].name +"</h2>"
         +"<h6>"+gon.marker_info[i].location+"</h2>"
         +"</div>";
+    console.log(coords[i]);
+    bounds.extend (new google.maps.LatLng(coords[i].lat, coords[i].lng)); 
 
     //for each coordinate, create a new infoWindow
     var infowindow = new google.maps.InfoWindow({content:""});
@@ -185,6 +189,7 @@ function initialize() {
     //use closure to run an instance of the function for each iteration through the loop
     bindInfoWindow(marker, map, infowindow, contentString);
   }
+  map.fitBounds(bounds);
 }
 
 
