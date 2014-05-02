@@ -121,7 +121,14 @@ function bindInfoWindow(marker, map, infowindow, strDescription) {
         infowindow.setContent(strDescription);
         infowindow.open(map, marker);
     });
+    google.maps.event.addListener(map, 'click', function(){
+        infowindow.close();
+    });
+
 }
+
+
+
 
 function initialize() {
   //Config the actual Map
@@ -168,13 +175,13 @@ function initialize() {
   //iterate through events again to add markers
   for (var i = 0; i < coords.length; i++){
     //for each coordinate, create a new content string 
+    // console.log(gon.marker_info[i].location.split("@"));
     var contentString = 
         "<div class='infowindow'>"
         +"<img width='40' src='"+gon.marker_info[i].image+"'>"
         +"<h5>"+gon.marker_info[i].name +"</h2>"
-        +"<h6>"+gon.marker_info[i].location+"</h2>"
+        +"<h6>"+gon.marker_info[i].location.split("@")[1]+"</h2>"
         +"</div>";
-    console.log(coords[i]);
     bounds.extend (new google.maps.LatLng(coords[i].lat, coords[i].lng)); 
 
     //for each coordinate, create a new infoWindow

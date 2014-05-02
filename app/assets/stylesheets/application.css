@@ -91,7 +91,9 @@ html, body{
 }
 
 .infowindow{
-	width:100px;
+	width:125px;
+	overflow: hidden;
+	height:auto;
 }
 
 .infowindow img{
@@ -100,7 +102,7 @@ html, body{
 .infowindow h5, .infowindow h6{
 	color:#000;
 	margin:0 auto;
-	width:85px;
+	width:100px;
 }
 
 
