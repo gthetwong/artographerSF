@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-
+//map options from Fancy Maps, but tweaked for the project
 var style_array = [
     {
         "stylers": [{"visibility": "on"}]
@@ -87,8 +87,8 @@ var style_array = [
 ];
 
 
-
-var slide_events = function(){
+//slides event list in and out
+var slide_event_list = function(){
     $(".list_btn a").click(function(event){
         event.preventDefault();
         $(".list_btn img").toggleClass("spin");
@@ -96,21 +96,14 @@ var slide_events = function(){
         $(".head").toggleClass("headbgd");
     });
 };
-
+//toggles signin pane
 var toggle_signin_button = function(){
     $(".toggle_btn a").click(function( event ) {
         event.preventDefault();
         $(".toggle_container").toggleClass("toggle"); 
     });
 };
-
-var slide_description = function(){
-    $(".event_container",this).click(function(event){
-        $(this).toggleClass("size_auto");
-        $(".event_info",this).next("div .description").toggleClass("size_auto");
-    });
-};
-
+//script for custom scrollbar
 function scroller(){
 $(".container").mCustomScrollbar({
         mouseWheel:true,
@@ -122,7 +115,7 @@ $(".container").mCustomScrollbar({
     }
   });
 }
-
+//closure used to create a new infowindow attached to each marker
 function bindInfoWindow(marker, map, infowindow, strDescription) {
     google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent(strDescription);
@@ -196,10 +189,18 @@ function initialize() {
 
 
 $(document).on("ready page:load", function(){
-  slide_events(); 
-  slide_description(); 
+  //this controls the events sliding down to reveal their description
+  $('.event_container',this).click(function(event){
+    $(this).toggleClass('size_auto');
+    $('.event_info',this).next('div .description').toggleClass('size_auto');
+  });
+  //this controls toggles the event list sliding in and out of the screen
+  slide_event_list(); 
+  //this toggles the signin pane 
   toggle_signin_button(); 
+  //script for firing up the custom scrollbar
   scroller();
+  //script for firing up the map and markers w/ info windows
   initialize();
 });
 
