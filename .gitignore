@@ -15,3 +15,10 @@
 /log/*.log
 /tmp
 .env
+
+.DS_Store
+*.key
+*.sketch
+*.png
+
+node_modules/
