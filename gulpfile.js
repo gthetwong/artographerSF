@@ -1,9 +1,6 @@
 var gulp = require('gulp');
 var runSeq = require('run-sequence');
-
-
-var destDir = 'build/public';
-
+var destDir = 'build';
 var destPaths = {
 	styles: destDir + '/css',
 	scripts: destDir + '/js'
@@ -28,9 +25,9 @@ gulp.task('styles', function(){
 
 gulp.task('bundle', function(cb){
 	var Builder = require('systemjs-builder');
-	var builder = new Builder('./public/js/', 'config.js');
+	var builder = new Builder('./', 'jspm.config.js');
 	builder.reset();
-	builder.buildStatic('index.js', destPaths.scripts + '/index.js', {sourceMaps: 'inline', runtime:false})
+	builder.buildStatic('public/js/index.js', destPaths.scripts + '/index.js', {sourceMaps: 'inline', runtime:false})
 	.then(function(){
 		console.log('Build Complete');
 		cb(null);
@@ -41,13 +38,12 @@ gulp.task('bundle', function(cb){
 	});
 });
 
-gulp.task('server', function(){
-	return gulp.src('app.js')
-		.pipe(gulp.dest('build/'));
+gulp.task('assets', function(cb){
+	
 });
 
 gulp.task('build', function(cb){
-	runSeq('clean', 'styles', 'bundle', 'server', cb);
+	runSeq('clean', 'styles', 'bundle', cb);
 });
 
 // gulp.task('watch', function(){
