@@ -31,14 +31,13 @@ E08E79 224,142,121
 F1D4AF 241,212,175
 ECE5CE 236,229,206
 C5E0DC 197,224,220
-*/
 
-// @font-face {
-// 	font-family: "Zomblo";
-// 	src: url('../assets/Zomblo.otf') format('opentype');
-// 	src: url('../assets/Zomblo.ttf') format('truetype');
-// }
-@import url('../assets/Zomblo.otf');
+@font-face {
+ 	font-family: "Zomblo";
+ 	src: url('../assets/Zomblo.otf') format('opentype');
+ 	src: url('../assets/Zomblo.ttf') format('truetype');
+}
+@import url('../assets/Zomblo.otf');*/
 
 html,
 body {

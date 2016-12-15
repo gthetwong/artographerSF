@@ -1,4 +1,4 @@
-window._mapStyles = [{
+module.exports = [{
 	"featureType": "poi",
 	"elementType": "labels.text.fill",
 	"stylers": [{

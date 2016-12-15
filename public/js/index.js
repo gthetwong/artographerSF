@@ -1,5 +1,7 @@
 var __const = {};
 	__const.weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var mapStyles = require('mapstyles');
+//var React = require('react');
 
 function __initMap() {
 	var map = new google.maps.Map(document.getElementById('map'), {
@@ -7,7 +9,7 @@ function __initMap() {
 		zoom: 13,
 		zoomControl: true,
 		scrollwheel: false
-		// styles: window._mapStyles
+		// styles: mapStyles
 	});
 }
 
